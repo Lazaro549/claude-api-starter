@@ -1,5 +1,5 @@
 # claude-api-starter 🤖
-![](Logo.png)
+![](Logo.png) 
 A clean, opinionated Python starter kit for building with the Anthropic Claude API — covering basic completions, tool use, multi-turn conversations, agents, and streaming.
 
 > Built by [Lazaro Gomez Vitolo](https://lazaro549.github.io/Portafolio/) after completing the *Building with the Claude API* course on Anthropic Academy.
