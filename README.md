@@ -149,6 +149,17 @@ See [`docs/CONCEPTS.md`](docs/CONCEPTS.md) for notes on:
 
 ---
 
+## 💸 Donations
+
+If you find this project useful and want to support it:
+
+| Currency | Alias |
+|---|---|
+| 🇦🇷 ARS (Argentina) | `lazaro.503.alaba.mp` |
+| 🌎 USD (Argentina — local transfers only) | `ahogada.duras.foca` |
+
+---
+
 ## License
 
 MIT — use freely, attribution appreciated.
