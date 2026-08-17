@@ -38,4 +38,3 @@ def test_error_on_invalid():
 def test_run_calculator_wrapper():
     result = run_calculator({"expression": "3 * 3"})
     assert result == "9"
-
