@@ -1,38 +1,44 @@
 # claude-api-starter 🤖
-![](Logo.png)
-A clean, opinionated Python starter kit for building with the Anthropic Claude API — covering basic completions, tool use, multi-turn conversations, agents, and streaming.
 
-> Built by [Lazaro Gomez Vitolo](https://lazaro549.github.io/Portafolio/) after completing the *Building with the Claude API* course on Anthropic Academy.
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Anthropic](https://img.shields.io/badge/Anthropic-Claude%20API-purple)](https://www.anthropic.com)
+
+A clean, opinionated **Python starter kit** for building with the Anthropic Claude API.  
+Covers basic completions, streaming, multi-turn conversations, tool use, and a simple ReAct-style agent.
+
+> Built by [Lazaro Gomez Vitolo](https://lazaro549.github.io/Portafolio/) after completing the **Building with the Claude API** course on Anthropic Academy.
 
 ---
 
-## Features
+## ✨ Features
 
 - ✅ Basic messages & system prompts
 - ✅ Multi-turn conversation management
 - ✅ Streaming responses
 - ✅ Tool use (function calling)
 - ✅ Simple ReAct-style agent loop
-- ✅ Token counting & cost estimation utilities
-- ✅ Environment-based config (no hardcoded keys)
-- ✅ Example scripts ready to run
+- ✅ Token counting & cost estimation
+- ✅ Environment-based configuration (no hardcoded keys)
+- ✅ Ready-to-run example scripts
+- ✅ Unit tests included
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
-```
+```text
 claude-api-starter/
 ├── src/
 │   ├── agents/
 │   │   └── react_agent.py       # ReAct agent loop with tool use
 │   ├── tools/
-│   │   ├── calculator.py        # Math tool example
-│   │   └── web_search.py        # Search tool stub
+│   │   ├── calculator.py        # Safe math evaluation tool
+│   │   └── web_search.py        # Search tool stub (ready to extend)
 │   └── utils/
 │       ├── client.py            # Anthropic client factory
 │       ├── conversation.py      # Conversation history manager
-│       └── tokens.py            # Token counting helpers
+│       └── tokens.py            # Token counting & cost helpers
 ├── examples/
 │   ├── 01_basic_message.py
 │   ├── 02_streaming.py
@@ -43,7 +49,7 @@ claude-api-starter/
 │   ├── test_conversation.py
 │   └── test_tools.py
 ├── docs/
-│   └── CONCEPTS.md
+│   └── CONCEPTS.md              # Key concepts from the Anthropic course
 ├── .env.example
 ├── requirements.txt
 └── README.md
@@ -51,18 +57,21 @@ claude-api-starter/
 
 ---
 
-## Quickstart
+## 🚀 Quick Start
 
 ### 1. Clone & install
 
 ```bash
 git clone https://github.com/Lazaro549/claude-api-starter.git
 cd claude-api-starter
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+
+python -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+
 pip install -r requirements.txt
 ```
 
-### 2. Set your API key
+### 2. Configure your API key
 
 ```bash
 cp .env.example .env
@@ -78,28 +87,44 @@ python examples/05_agent.py
 
 ---
 
-## Usage
+## 📚 Examples Overview
+
+| #  | File                  | What it teaches                          |
+|----|-----------------------|------------------------------------------|
+| 01 | `01_basic_message.py` | Simplest possible Claude API call        |
+| 02 | `02_streaming.py`     | Real-time streaming responses            |
+| 03 | `03_multi_turn.py`    | Conversation history management          |
+| 04 | `04_tool_use.py`      | Single-round tool use (calculator)       |
+| 05 | `05_agent.py`         | Full ReAct agent loop with multiple tools|
+
+---
+
+## 💡 Usage Examples
 
 ### Basic message
 
 ```python
-from src.utils.client import get_client
+from src.utils.client import get_client, get_model
+from src.utils.tokens import print_usage
 
 client = get_client()
 
 response = client.messages.create(
-    model="claude-sonnet-4-6",
-    max_tokens=1024,
-    messages=[{"role": "user", "content": "Explain recursion in one paragraph."}]
+    model=get_model(),
+    max_tokens=512,
+    messages=[
+        {"role": "user", "content": "Explain recursion in one paragraph."}
+    ],
 )
 
 print(response.content[0].text)
+print_usage(response)
 ```
 
-### Multi-turn with history manager
+### Multi-turn conversation
 
 ```python
-from src.utils.client import get_client
+from src.utils.client import get_client, get_model
 from src.utils.conversation import ConversationManager
 
 client = get_client()
@@ -107,10 +132,10 @@ conv = ConversationManager(system="You are a helpful coding assistant.")
 
 conv.add_user("What is a closure in Python?")
 response = client.messages.create(
-    model="claude-sonnet-4-6",
+    model=get_model(),
     max_tokens=1024,
     system=conv.system,
-    messages=conv.messages
+    messages=conv.messages,
 )
 conv.add_assistant(response.content[0].text)
 
@@ -118,34 +143,52 @@ conv.add_user("Give me a short example.")
 # ... continue the conversation
 ```
 
-### Tool use
+### ReAct Agent
 
 ```python
-from src.tools.calculator import CALCULATOR_TOOL, run_calculator
-# See examples/04_tool_use.py for the full agentic loop
+from src.utils.client import get_client
+from src.agents.react_agent import run_agent
+
+client = get_client()
+
+answer = run_agent(
+    "What is the square root of 1764 multiplied by pi? Round to 4 decimal places.",
+    client,
+    verbose=True,
+)
+print(answer)
 ```
 
 ---
 
-## Requirements
+## 🧠 Key Concepts
 
-```
+See [`docs/CONCEPTS.md`](docs/CONCEPTS.md) for notes on:
+
+- Messages API structure
+- System prompts
+- Stop reasons (`end_turn`, `tool_use`, `max_tokens`...)
+- Tool use lifecycle (`tool_use` → `tool_result`)
+- Streaming with the `stream()` context manager
+- Token limits and cost management
+
+---
+
+## 📦 Requirements
+
+```text
 anthropic>=0.25.0
 python-dotenv>=1.0.0
 ```
 
 ---
 
-## Concepts Covered
+## 🧪 Running Tests
 
-See [`docs/CONCEPTS.md`](docs/CONCEPTS.md) for notes on:
-
-- Messages API structure
-- System prompts
-- Stop reasons & multi-stop handling
-- Tool use lifecycle (`tool_use` → `tool_result`)
-- Streaming with `stream()` context manager
-- Token limits and cost management
+```bash
+python tests/test_conversation.py
+python tests/test_tools.py
+```
 
 ---
 
@@ -154,12 +197,17 @@ See [`docs/CONCEPTS.md`](docs/CONCEPTS.md) for notes on:
 If you find this project useful and want to support it:
 
 | Currency | Alias |
-|---|---|
+|----------|-------|
 | 🇦🇷 ARS (Argentina) | `lazaro.503.alaba.mp` |
 | 🌎 USD (Argentina — local transfers only) | `ahogada.duras.foca` |
 
 ---
 
-## License
+## 📄 License
 
 MIT — use freely, attribution appreciated.
+
+---
+
+**Made with ❤️ after completing the official Anthropic Academy course.**
+```
