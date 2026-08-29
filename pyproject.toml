@@ -80,3 +80,4 @@ ignore_missing_imports = true
 # so mypy needs explicit package bases to resolve it unambiguously.
 explicit_package_bases = true
 mypy_path = "."
+pip install -e .
