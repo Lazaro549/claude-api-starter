@@ -74,6 +74,11 @@ python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 
 pip install -r requirements.txt
+
+# Install the project itself in editable mode so `src` resolves as a
+# package no matter which directory you run scripts from (needed for
+# examples/*.py to import `src...`).
+pip install -e .
 ```
 
 ### 2. Configure your API key
