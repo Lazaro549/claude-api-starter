@@ -1,0 +1,202 @@
+[
+  {
+    "id": "reasoning_001",
+    "category": "reasoning",
+    "prompt": "What is 12 + 15?",
+    "expected_tools": [],
+    "tool_match": "none",
+    "answer_check": "numeric",
+    "expected_answer": "27",
+    "tolerance": 0.001,
+    "notes": "Trivial arithmetic. Tool use is optional here (the model may answer directly or call the calculator) so tool selection is not scored, only the final numeric answer."
+  },
+  {
+    "id": "reasoning_002",
+    "category": "reasoning",
+    "prompt": "A train travels 90 miles in 1.5 hours. What is its average speed in miles per hour?",
+    "expected_tools": [],
+    "tool_match": "none",
+    "answer_check": "numeric",
+    "expected_answer": "60",
+    "tolerance": 0.5,
+    "notes": "Simple word problem solvable with or without the calculator tool."
+  },
+  {
+    "id": "no_tool_001",
+    "category": "no_tool",
+    "prompt": "What is the capital of Japan?",
+    "expected_tools": [],
+    "tool_match": "exact",
+    "answer_check": "contains",
+    "expected_answer": "Tokyo",
+    "notes": "Pure factual recall. No tool should be invoked; calling one is scored as a tool-selection error."
+  },
+  {
+    "id": "no_tool_002",
+    "category": "no_tool",
+    "prompt": "Is 7 a prime number? Answer with only 'yes' or 'no'.",
+    "expected_tools": [],
+    "tool_match": "exact",
+    "answer_check": "contains",
+    "expected_answer": "yes",
+    "notes": "Simple logic question with a small, well-known answer set. No tool required."
+  },
+  {
+    "id": "no_tool_003",
+    "category": "no_tool",
+    "prompt": "What is the chemical symbol for gold?",
+    "expected_tools": [],
+    "tool_match": "exact",
+    "answer_check": "contains",
+    "expected_answer": "Au",
+    "case_sensitive": true,
+    "notes": "Case-sensitive check to avoid false positives from unrelated words (e.g. 'author') matching a lowercase 'au'."
+  },
+  {
+    "id": "calc_001",
+    "category": "calculator",
+    "prompt": "What is 847 multiplied by 293?",
+    "expected_tools": ["calculator"],
+    "tool_match": "exact",
+    "answer_check": "numeric",
+    "expected_answer": "248171",
+    "tolerance": 0.001,
+    "notes": "Multiplication large enough that a correct answer strongly implies calculator use."
+  },
+  {
+    "id": "calc_002",
+    "category": "calculator",
+    "prompt": "What is the square root of 2025?",
+    "expected_tools": ["calculator"],
+    "tool_match": "exact",
+    "answer_check": "numeric",
+    "expected_answer": "45",
+    "tolerance": 0.001
+  },
+  {
+    "id": "calc_003",
+    "category": "calculator",
+    "prompt": "Calculate (15 + 27) * 3 - 8.",
+    "expected_tools": ["calculator"],
+    "tool_match": "exact",
+    "answer_check": "numeric",
+    "expected_answer": "118",
+    "tolerance": 0.001
+  },
+  {
+    "id": "calc_004",
+    "category": "calculator",
+    "prompt": "What is 2 raised to the power of 16?",
+    "expected_tools": ["calculator"],
+    "tool_match": "exact",
+    "answer_check": "numeric",
+    "expected_answer": "65536",
+    "tolerance": 0.001
+  },
+  {
+    "id": "multi_001",
+    "category": "multi_step",
+    "prompt": "If I invest $2000 at 5% annual compound interest for 3 years, what is the final amount? Use A = P * (1 + r)^t.",
+    "expected_tools": ["calculator"],
+    "tool_match": "exact",
+    "answer_check": "numeric",
+    "expected_answer": "2315.25",
+    "tolerance": 1.0,
+    "notes": "Multi-step compound-interest calculation. Tolerance allows for minor rounding in the model's phrasing."
+  },
+  {
+    "id": "multi_002",
+    "category": "multi_step",
+    "prompt": "First calculate the square root of 169, then multiply that result by 8. What is the final number?",
+    "expected_tools": ["calculator"],
+    "tool_match": "exact",
+    "answer_check": "numeric",
+    "expected_answer": "104",
+    "tolerance": 0.01,
+    "notes": "Explicitly sequenced task that may require two separate calculator calls."
+  },
+  {
+    "id": "multi_003",
+    "category": "multi_step",
+    "prompt": "What is sin(0) plus cos(0)?",
+    "expected_tools": ["calculator"],
+    "tool_match": "exact",
+    "answer_check": "numeric",
+    "expected_answer": "1",
+    "tolerance": 0.01,
+    "notes": "Exercises the calculator's trig functions."
+  },
+  {
+    "id": "sel_001",
+    "category": "tool_selection",
+    "prompt": "Search the web for the latest news about NASA's Artemis program.",
+    "expected_tools": ["web_search"],
+    "tool_match": "exact",
+    "answer_check": "none",
+    "notes": "web_search is a stub in this repo (see src/tools/web_search.py), so only tool selection is scored, not answer correctness."
+  },
+  {
+    "id": "sel_002",
+    "category": "tool_selection",
+    "prompt": "What is today's weather in Tokyo?",
+    "expected_tools": ["web_search"],
+    "tool_match": "exact",
+    "answer_check": "none",
+    "notes": "Real-time information the model cannot know on its own; correct behavior is to call web_search rather than guess or use the calculator."
+  },
+  {
+    "id": "sel_003",
+    "category": "tool_selection",
+    "prompt": "Who is the current CEO of OpenAI?",
+    "expected_tools": ["web_search"],
+    "tool_match": "exact",
+    "answer_check": "none",
+    "notes": "Tests discrimination between 'answer from training knowledge' and 'this needs a current lookup'."
+  },
+  {
+    "id": "amb_001",
+    "category": "ambiguous",
+    "prompt": "Do the thing.",
+    "expected_tools": [],
+    "tool_match": "none",
+    "answer_check": "none",
+    "notes": "Deliberately underspecified request. There is no single correct answer or tool; the task only checks that the agent completes without crashing."
+  },
+  {
+    "id": "amb_002",
+    "category": "ambiguous",
+    "prompt": "Compute the answer.",
+    "expected_tools": [],
+    "tool_match": "none",
+    "answer_check": "none",
+    "notes": "Ambiguous request with no expression or question supplied. Checks graceful handling of an invalid/incomplete task."
+  },
+  {
+    "id": "edge_001",
+    "category": "edge_case",
+    "prompt": "What is 10 divided by 0?",
+    "expected_tools": ["calculator"],
+    "tool_match": "exact",
+    "answer_check": "none",
+    "notes": "The calculator raises ZeroDivisionError internally and returns an 'Error: ...' string. This task validates that tool EXECUTION failure is correctly detected even when the overall agent task still completes."
+  },
+  {
+    "id": "edge_002",
+    "category": "edge_case",
+    "prompt": "Use the calculator to compute 2+2. Then use the calculator again to compute 3+3. Then use it once more to compute 4+4. Tell me all three results.",
+    "expected_tools": [],
+    "tool_match": "none",
+    "answer_check": "none",
+    "max_iterations": 1,
+    "notes": "max_iterations is deliberately overridden to 1, which is too low for a task that needs several tool round-trips. This deterministically forces the agent's 'max iterations reached' fallback path, validating that the harness correctly reports it as an agent failure rather than a success."
+  },
+  {
+    "id": "edge_003",
+    "category": "edge_case",
+    "prompt": "Use the calculator to compute the square root of -1.",
+    "expected_tools": ["calculator"],
+    "tool_match": "exact",
+    "answer_check": "none",
+    "notes": "math.sqrt(-1) raises a ValueError (math domain error), a different failure mode than division by zero. Validates that tool execution failure detection is not specific to a single exception type."
+  }
+]

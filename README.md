@@ -48,6 +48,11 @@ claude-api-starter/
 ├── tests/
 │   ├── test_conversation.py
 │   └── test_tools.py
+├── evaluation/                  # Agent evaluation suite (see evaluation/README.md)
+│   ├── datasets/
+│   ├── evaluators/
+│   ├── runners/
+│   └── reports/
 ├── docs/
 │   └── CONCEPTS.md              # Key concepts from the Anthropic course
 ├── .env.example
@@ -189,6 +194,22 @@ python-dotenv>=1.0.0
 python tests/test_conversation.py
 python tests/test_tools.py
 ```
+
+---
+
+## 📊 Evaluation
+
+This project includes an automated evaluation suite for the ReAct agent —
+a 20-task dataset plus deterministic evaluators that measure task success
+rate, answer correctness, tool selection/execution accuracy, latency,
+token usage, and estimated cost, without any LLM-judge scoring.
+
+```bash
+python -m evaluation.runners.run_eval
+```
+
+See [`evaluation/README.md`](evaluation/README.md) for methodology, the
+full metrics list, and how to add new evaluation cases.
 
 ---
 

@@ -75,4 +75,8 @@ python_version = "3.10"
 warn_return_any = true
 warn_unused_configs = true
 ignore_missing_imports = true
-```
+# evaluation/ is an implicit namespace package (no __init__.py at its
+# root, matching the structure requested for the evaluation suite),
+# so mypy needs explicit package bases to resolve it unambiguously.
+explicit_package_bases = true
+mypy_path = "."
