@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "dataset": "/workspaces/claude-api-starter/claude-api-starter/evaluation/datasets/agent_tasks.json",
+    "generated_at": "2026-08-29T07:16:06.089668+00:00",
+    "tasks_run": 5
+  },
+  "summary": {
+    "total_tasks": 5,
+    "successful_tasks": 0,
+    "success_rate": 0.0,
+    "agent_failures": 5,
+    "agent_failures_breakdown": {
+      "agent_error": 5,
+      "max_iterations_exceeded": 0
+    },
+    "correctness_checked_tasks": 5,
+    "correctness_correct_tasks": 0,
+    "correctness_rate": 0.0,
+    "tool_selection_checked_tasks": 3,
+    "tool_selection_correct_tasks": 3,
+    "tool_selection_accuracy": 1.0,
+    "tool_calls_total": 0,
+    "tool_calls_successful": 0,
+    "tool_execution_success_rate": null,
+    "average_latency_seconds": 0.07724,
+    "tasks_with_token_data": 0,
+    "total_input_tokens": null,
+    "total_output_tokens": null,
+    "total_tokens": null,
+    "average_input_tokens": null,
+    "average_output_tokens": null,
+    "estimated_cost_usd": null
+  },
+  "tasks": [
+    {
+      "id": "reasoning_001",
+      "category": "reasoning",
+      "prompt": "What is 12 + 15?",
+      "expected_answer": "27",
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.116,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": false,
+        "selection_correct": null,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "Tool selection not evaluated for this task."
+      }
+    },
+    {
+      "id": "reasoning_002",
+      "category": "reasoning",
+      "prompt": "A train travels 90 miles in 1.5 hours. What is its average speed in miles per hour?",
+      "expected_answer": "60",
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0683,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": false,
+        "selection_correct": null,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "Tool selection not evaluated for this task."
+      }
+    },
+    {
+      "id": "no_tool_001",
+      "category": "no_tool",
+      "prompt": "What is the capital of Japan?",
+      "expected_answer": "Tokyo",
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0712,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": true,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=[] actual=[]"
+      }
+    },
+    {
+      "id": "no_tool_002",
+      "category": "no_tool",
+      "prompt": "Is 7 a prime number? Answer with only 'yes' or 'no'.",
+      "expected_answer": "yes",
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.065,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": true,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=[] actual=[]"
+      }
+    },
+    {
+      "id": "no_tool_003",
+      "category": "no_tool",
+      "prompt": "What is the chemical symbol for gold?",
+      "expected_answer": "Au",
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0657,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": true,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=[] actual=[]"
+      }
+    }
+  ]
+}

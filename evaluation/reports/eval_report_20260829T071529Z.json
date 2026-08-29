@@ -1,0 +1,828 @@
+{
+  "meta": {
+    "dataset": "/workspaces/claude-api-starter/claude-api-starter/evaluation/datasets/agent_tasks.json",
+    "generated_at": "2026-08-29T07:15:29.985401+00:00",
+    "tasks_run": 20
+  },
+  "summary": {
+    "total_tasks": 20,
+    "successful_tasks": 0,
+    "success_rate": 0.0,
+    "agent_failures": 20,
+    "agent_failures_breakdown": {
+      "agent_error": 20,
+      "max_iterations_exceeded": 0
+    },
+    "correctness_checked_tasks": 12,
+    "correctness_correct_tasks": 0,
+    "correctness_rate": 0.0,
+    "tool_selection_checked_tasks": 15,
+    "tool_selection_correct_tasks": 3,
+    "tool_selection_accuracy": 0.2,
+    "tool_calls_total": 0,
+    "tool_calls_successful": 0,
+    "tool_execution_success_rate": null,
+    "average_latency_seconds": 0.07022,
+    "tasks_with_token_data": 0,
+    "total_input_tokens": null,
+    "total_output_tokens": null,
+    "total_tokens": null,
+    "average_input_tokens": null,
+    "average_output_tokens": null,
+    "estimated_cost_usd": null
+  },
+  "tasks": [
+    {
+      "id": "reasoning_001",
+      "category": "reasoning",
+      "prompt": "What is 12 + 15?",
+      "expected_answer": "27",
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.113,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": false,
+        "selection_correct": null,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "Tool selection not evaluated for this task."
+      }
+    },
+    {
+      "id": "reasoning_002",
+      "category": "reasoning",
+      "prompt": "A train travels 90 miles in 1.5 hours. What is its average speed in miles per hour?",
+      "expected_answer": "60",
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0675,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": false,
+        "selection_correct": null,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "Tool selection not evaluated for this task."
+      }
+    },
+    {
+      "id": "no_tool_001",
+      "category": "no_tool",
+      "prompt": "What is the capital of Japan?",
+      "expected_answer": "Tokyo",
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0638,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": true,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=[] actual=[]"
+      }
+    },
+    {
+      "id": "no_tool_002",
+      "category": "no_tool",
+      "prompt": "Is 7 a prime number? Answer with only 'yes' or 'no'.",
+      "expected_answer": "yes",
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0684,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": true,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=[] actual=[]"
+      }
+    },
+    {
+      "id": "no_tool_003",
+      "category": "no_tool",
+      "prompt": "What is the chemical symbol for gold?",
+      "expected_answer": "Au",
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0698,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": true,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=[] actual=[]"
+      }
+    },
+    {
+      "id": "calc_001",
+      "category": "calculator",
+      "prompt": "What is 847 multiplied by 293?",
+      "expected_answer": "248171",
+      "expected_tools": [
+        "calculator"
+      ],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0666,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": false,
+        "expected_tools": [
+          "calculator"
+        ],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [
+          "calculator"
+        ],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=['calculator'] actual=[]"
+      }
+    },
+    {
+      "id": "calc_002",
+      "category": "calculator",
+      "prompt": "What is the square root of 2025?",
+      "expected_answer": "45",
+      "expected_tools": [
+        "calculator"
+      ],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0741,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": false,
+        "expected_tools": [
+          "calculator"
+        ],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [
+          "calculator"
+        ],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=['calculator'] actual=[]"
+      }
+    },
+    {
+      "id": "calc_003",
+      "category": "calculator",
+      "prompt": "Calculate (15 + 27) * 3 - 8.",
+      "expected_answer": "118",
+      "expected_tools": [
+        "calculator"
+      ],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0651,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": false,
+        "expected_tools": [
+          "calculator"
+        ],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [
+          "calculator"
+        ],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=['calculator'] actual=[]"
+      }
+    },
+    {
+      "id": "calc_004",
+      "category": "calculator",
+      "prompt": "What is 2 raised to the power of 16?",
+      "expected_answer": "65536",
+      "expected_tools": [
+        "calculator"
+      ],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0682,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": false,
+        "expected_tools": [
+          "calculator"
+        ],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [
+          "calculator"
+        ],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=['calculator'] actual=[]"
+      }
+    },
+    {
+      "id": "multi_001",
+      "category": "multi_step",
+      "prompt": "If I invest $2000 at 5% annual compound interest for 3 years, what is the final amount? Use A = P * (1 + r)^t.",
+      "expected_answer": "2315.25",
+      "expected_tools": [
+        "calculator"
+      ],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0664,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": false,
+        "expected_tools": [
+          "calculator"
+        ],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [
+          "calculator"
+        ],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=['calculator'] actual=[]"
+      }
+    },
+    {
+      "id": "multi_002",
+      "category": "multi_step",
+      "prompt": "First calculate the square root of 169, then multiply that result by 8. What is the final number?",
+      "expected_answer": "104",
+      "expected_tools": [
+        "calculator"
+      ],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0662,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": false,
+        "expected_tools": [
+          "calculator"
+        ],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [
+          "calculator"
+        ],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=['calculator'] actual=[]"
+      }
+    },
+    {
+      "id": "multi_003",
+      "category": "multi_step",
+      "prompt": "What is sin(0) plus cos(0)?",
+      "expected_answer": "1",
+      "expected_tools": [
+        "calculator"
+      ],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0778,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": true,
+        "correct": false,
+        "detail": "Agent produced no final answer to evaluate."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": false,
+        "expected_tools": [
+          "calculator"
+        ],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [
+          "calculator"
+        ],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=['calculator'] actual=[]"
+      }
+    },
+    {
+      "id": "sel_001",
+      "category": "tool_selection",
+      "prompt": "Search the web for the latest news about NASA's Artemis program.",
+      "expected_answer": null,
+      "expected_tools": [
+        "web_search"
+      ],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0647,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": false,
+        "correct": null,
+        "detail": "No correctness check configured for this task."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": false,
+        "expected_tools": [
+          "web_search"
+        ],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [
+          "web_search"
+        ],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=['web_search'] actual=[]"
+      }
+    },
+    {
+      "id": "sel_002",
+      "category": "tool_selection",
+      "prompt": "What is today's weather in Tokyo?",
+      "expected_answer": null,
+      "expected_tools": [
+        "web_search"
+      ],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0666,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": false,
+        "correct": null,
+        "detail": "No correctness check configured for this task."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": false,
+        "expected_tools": [
+          "web_search"
+        ],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [
+          "web_search"
+        ],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=['web_search'] actual=[]"
+      }
+    },
+    {
+      "id": "sel_003",
+      "category": "tool_selection",
+      "prompt": "Who is the current CEO of OpenAI?",
+      "expected_answer": null,
+      "expected_tools": [
+        "web_search"
+      ],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0683,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": false,
+        "correct": null,
+        "detail": "No correctness check configured for this task."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": false,
+        "expected_tools": [
+          "web_search"
+        ],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [
+          "web_search"
+        ],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=['web_search'] actual=[]"
+      }
+    },
+    {
+      "id": "amb_001",
+      "category": "ambiguous",
+      "prompt": "Do the thing.",
+      "expected_answer": null,
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.066,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": false,
+        "correct": null,
+        "detail": "No correctness check configured for this task."
+      },
+      "tool_use": {
+        "checked": false,
+        "selection_correct": null,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "Tool selection not evaluated for this task."
+      }
+    },
+    {
+      "id": "amb_002",
+      "category": "ambiguous",
+      "prompt": "Compute the answer.",
+      "expected_answer": null,
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.065,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": false,
+        "correct": null,
+        "detail": "No correctness check configured for this task."
+      },
+      "tool_use": {
+        "checked": false,
+        "selection_correct": null,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "Tool selection not evaluated for this task."
+      }
+    },
+    {
+      "id": "edge_001",
+      "category": "edge_case",
+      "prompt": "What is 10 divided by 0?",
+      "expected_answer": null,
+      "expected_tools": [
+        "calculator"
+      ],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0739,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": false,
+        "correct": null,
+        "detail": "No correctness check configured for this task."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": false,
+        "expected_tools": [
+          "calculator"
+        ],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [
+          "calculator"
+        ],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=['calculator'] actual=[]"
+      }
+    },
+    {
+      "id": "edge_002",
+      "category": "edge_case",
+      "prompt": "Use the calculator to compute 2+2. Then use the calculator again to compute 3+3. Then use it once more to compute 4+4. Tell me all three results.",
+      "expected_answer": null,
+      "expected_tools": [],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0694,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": false,
+        "correct": null,
+        "detail": "No correctness check configured for this task."
+      },
+      "tool_use": {
+        "checked": false,
+        "selection_correct": null,
+        "expected_tools": [],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "Tool selection not evaluated for this task."
+      }
+    },
+    {
+      "id": "edge_003",
+      "category": "edge_case",
+      "prompt": "Use the calculator to compute the square root of -1.",
+      "expected_answer": null,
+      "expected_tools": [
+        "calculator"
+      ],
+      "final_answer": null,
+      "status": "agent_error",
+      "error": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
+      "latency_seconds": 0.0636,
+      "tokens": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0,
+        "model": null
+      },
+      "estimated_cost_usd": null,
+      "correctness": {
+        "checked": false,
+        "correct": null,
+        "detail": "No correctness check configured for this task."
+      },
+      "tool_use": {
+        "checked": true,
+        "selection_correct": false,
+        "expected_tools": [
+          "calculator"
+        ],
+        "actual_tools": [],
+        "unexpected_tools": [],
+        "missing_tools": [
+          "calculator"
+        ],
+        "tool_calls_total": 0,
+        "tool_calls_successful": 0,
+        "tool_calls_failed": 0,
+        "tool_calls_unresolved": 0,
+        "detail": "exact match required: expected=['calculator'] actual=[]"
+      }
+    }
+  ]
+}
