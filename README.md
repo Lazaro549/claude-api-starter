@@ -57,6 +57,7 @@ claude-api-starter/
 │   └── CONCEPTS.md              # Key concepts from the Anthropic course
 ├── .env.example
 ├── requirements.txt
+├── ENGINEERING_DECISIONS.md
 └── README.md
 ```
 
