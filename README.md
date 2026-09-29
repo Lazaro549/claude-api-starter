@@ -233,8 +233,3 @@ If you find this project useful and want to support it:
 ## 📄 License
 
 MIT — use freely, attribution appreciated.
-
----
-
-**Made with ❤️ after completing the official Anthropic Academy course.**
-```
